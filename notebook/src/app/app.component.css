@@ -1,0 +1,100 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #2f2f30;
+  width: 400px;
+  height: 120px;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.selected {
+  background-color: #424242;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #2f2f30;
+  padding: 1rem;
+}
+
+input {
+  height: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+input, textarea {
+  width: 400px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.edit {
+  background-color: #a87634;
+}
+
+.edit:hover {
+  background-color: #815518;
+}
+
+.delete {
+  background-color: red;
+}
+
+.delete:hover {
+  background-color: #b62121;
+}
+
+.error {
+  color: red;
+  font: bold;
+  font-size: 1rem;
+}

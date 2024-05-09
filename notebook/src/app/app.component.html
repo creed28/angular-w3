@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <section class="input">
+    <input type="text" [(ngModel)]="modelTitle" placeholder="Title">
+    <textarea [(ngModel)]="modelDescription" placeholder="Description" rows="5"></textarea>
+
+    @if(!isValid) {
+      <div  class="error">
+        <p>Ensure the title is at least {{ titleMinSize }} characters and description is at least {{ descriptionMinSize }} characters.</p>
+      </div>
+    }
+    
+    <button (click)="isEditable ? editNote() : addNote()">
+      Submit
+    </button>
+  </section>
+
+  <section class="notes">
+    @if (getNotes().length === 0) {
+      <p>
+        No notes in the list.
+      </p>
+    } @else {
+        @for (note of getNotes(); track $index) {
+          <div class="note" [class.selected]="getIsSelected(note.id)" (click)="selectNote(note.id)">
+            <div class="field-container">
+              <div class="title">{{ note.title }}</div>
+              <div>{{note.description }}</div>
+            </div>
+            
+            @if (getIsSelected(note.id)) {
+              <div class="button-container">
+                <button class="edit" (click)="addForEdit(note.id)">Edit</button>
+                <button class="delete" (click)="deleteNote(note.id)">Delete</button>
+              </div>
+            }
+          </div>
+        }
+    }
+  </section>
+</div>
